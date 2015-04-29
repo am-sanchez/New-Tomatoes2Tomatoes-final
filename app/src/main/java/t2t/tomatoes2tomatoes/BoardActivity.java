@@ -18,11 +18,10 @@ import android.view.MotionEvent;
 import java.lang.reflect.Method;
 import android.view.View.OnTouchListener;
 import android.view.View.OnClickListener;
+import android.widget.ImageView;
 
 
-
-
-public class BoardActivity extends ActionBarActivity implements OnTouchListener {
+public class BoardActivity extends ActionBarActivity {
 
     ImageButton c0;
 
@@ -32,33 +31,16 @@ public class BoardActivity extends ActionBarActivity implements OnTouchListener 
         setContentView(R.layout.activity_board);
 
         c0=(ImageButton)findViewById(R.id.card0);
-        c0.setOnTouchListener(this);
 
-    }
-    float x,y= 0.0f;
-    boolean moving=false;
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
+        c0.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImageView placeCard = (ImageView) findViewById(R.id.placeholder);
+                placeCard.setImageResource(R.drawable.red_card_design_preview);
+            }
+        });
 
-        switch (event.getAction()){
-            case MotionEvent.ACTION_DOWN:
-                moving=true;
-                break;
-            case MotionEvent.ACTION_MOVE:
-                    if(moving) {
-                    x=event.getRawX()-c0.getWidth()/2;
-                    y=event.getRawY()-c0.getHeight()*2;
-                    c0.setX(x);
-                     c0.setY(y);
 
-                    }
-                break;
-            case MotionEvent.ACTION_UP:
-                moving=false;
-                break;
-        }
-
-        return true;
 
     }
 }
