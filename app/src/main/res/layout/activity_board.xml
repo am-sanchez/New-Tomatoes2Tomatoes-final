@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-<LinearLayout
-    android:layout_height="wrap_content"
+    <LinearLayout
+    android:layout_height="match_parent"
     android:layout_width="fill_parent"
     android:orientation="vertical"
     android:background="@drawable/appbackground"
@@ -13,35 +13,38 @@
     android:weightSum="1">
 
 
+    </LinearLayout>
+
     <HorizontalScrollView
-        android:paddingTop="0dp"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:fillViewport="false"
         android:id="@+id/playerScroll"
         android:focusable="false"
-        android:layout_weight="2.87"
-        android:layout_below="@+id/imageButton3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="195dp">
+        android:paddingTop="0dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignBottom="@+id/MiddleLeft">
 
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_height="@dimen/card_height"
+            android:layout_width="800dp"
             android:id="@+id/playerHand"
             android:baselineAligned="false"
             android:measureWithLargestChild="false"
             android:longClickable="false"
-            android:focusable="false">
+            android:focusable="false"
+            android:gravity="bottom"
+            android:weightSum="6"
+            android:layout_weight="1">
 
-            <ImageButton
+            <ImageView
                 android:layout_height="@dimen/card_height"
                 android:layout_width="@dimen/card_width"
                 android:scaleType="fitCenter"
-                android:layout_weight="4"
+                android:layout_weight="1"
                 android:layout_marginLeft="10px"
                 android:layout_marginRight="10px"
                 android:text="card0"
@@ -50,10 +53,10 @@
                 android:id="@+id/card0"
                 android:adjustViewBounds="true" />
 
-            <ImageButton
+            <ImageView
                 android:layout_height="@dimen/card_height"
                 android:layout_width="@dimen/card_width"
-                android:layout_weight="4"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:layout_marginLeft="10px"
                 android:layout_marginRight="10px"
@@ -62,10 +65,10 @@
                 android:src="@drawable/cardback"
                 android:id="@+id/card1" />
 
-            <ImageButton
+            <ImageView
                 android:layout_height="@dimen/card_height"
                 android:layout_width="@dimen/card_width"
-                android:layout_weight="4"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:layout_marginLeft="10px"
                 android:layout_marginRight="10px"
@@ -73,10 +76,10 @@
                 android:background = "@android:color/transparent"
                 android:src="@drawable/cardback"
                 android:id="@+id/card2" />
-            <ImageButton
+            <ImageView
                 android:layout_height="@dimen/card_height"
                 android:layout_width="@dimen/card_width"
-                android:layout_weight="4"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:layout_marginLeft="10px"
                 android:layout_marginRight="10px"
@@ -84,10 +87,10 @@
                 android:background = "@android:color/transparent"
                 android:src="@drawable/cardback"
                 android:id="@+id/card3" />
-            <ImageButton
+            <ImageView
                 android:layout_height="@dimen/card_height"
                 android:layout_width="@dimen/card_width"
-                android:layout_weight="4"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:layout_marginLeft="10px"
                 android:layout_marginRight="10px"
@@ -95,10 +98,10 @@
                 android:background = "@android:color/transparent"
                 android:src="@drawable/cardback"
                 android:id="@+id/card4" />
-            <ImageButton
+            <ImageView
                 android:layout_height="@dimen/card_height"
                 android:layout_width="@dimen/card_width"
-                android:layout_weight="4"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:layout_marginLeft="10px"
                 android:layout_marginRight="10px"
@@ -106,10 +109,10 @@
                 android:background = "@android:color/transparent"
                 android:src="@drawable/cardback"
                 android:id="@+id/card5" />
-            <ImageButton
+            <ImageView
                 android:layout_height="@dimen/card_height"
                 android:layout_width="@dimen/card_width"
-                android:layout_weight="4"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:layout_marginLeft="10px"
                 android:layout_marginRight="10px"
@@ -119,21 +122,98 @@
                 android:id="@+id/card6" />
 
         </LinearLayout>
-
-
     </HorizontalScrollView>
-</LinearLayout>
 
-    <ImageButton
-        android:layout_width="@dimen/card_width"
-        android:layout_height="200dp"
-        android:background="@drawable/placecard"
-        android:adjustViewBounds="true"
-        android:layout_weight="0.33"
-        android:paddingBottom="0dp"
-        android:layout_gravity="right"
-        android:scaleType="fitXY"
-        android:id="@+id/placeholder"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="false"
+        android:paddingEnd="0dp"
+        android:paddingStart="0dp"
+        android:paddingBottom="160dp"
+        android:weightSum="1"
+        android:id="@+id/MiddleLeft"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="25dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="@dimen/card_width"
+            android:layout_height="0dp"
+            android:id="@+id/GreenCard"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/blankgreen"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/TopNamePlates">
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:id="@+id/imageView3"
+            android:src="@drawable/playeronenameplate"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:id="@+id/imageView4"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:src="@drawable/playertwonameplate" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:id="@+id/player3"
+            android:layout_gravity="top|right"
+            android:layout_weight="1"
+            android:src="@drawable/playerthreenameplate" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:paddingEnd="0dp"
+        android:paddingStart="0dp"
+        android:paddingBottom="160dp"
+        android:weightSum="1"
+        android:id="@+id/MiddleRight"
+        android:layout_alignParentStart="false"
+        android:paddingLeft="0dp"
+        android:gravity="center_vertical"
+        android:paddingRight="25dp">
+
+        <ImageView
+            android:layout_width="@dimen/card_width"
+            android:layout_height="@dimen/card_height"
+            android:id="@+id/placeholder"
+            android:src="@drawable/placeholder"
+            android:contentDescription="Blank card to place card onto"
+            android:layout_gravity="right" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="false"
+        android:gravity="center_horizontal">
+
+    </LinearLayout>
 
 
 </RelativeLayout>

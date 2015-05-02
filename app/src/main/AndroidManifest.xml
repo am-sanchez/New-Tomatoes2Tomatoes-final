@@ -20,6 +20,10 @@
             android:name=".BoardActivity"
             android:label="@string/title_activity_board" >
         </activity>
+        <activity
+            android:name=".PlayerSelect"
+            android:label="@string/title_activity_player_select" >
+        </activity>
     </application>
 
 </manifest>

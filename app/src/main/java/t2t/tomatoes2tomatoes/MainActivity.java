@@ -1,20 +1,25 @@
 package t2t.tomatoes2tomatoes;
 
+import android.app.Activity;
+import android.app.DialogFragment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
-    // Call when user clicks start button
-    public void switchToBoard(View view) {
-        Intent intent = new Intent(this, BoardActivity.class);
-        startActivity(intent);
-
+    // This is needed to show player select pop-up
+    public void showPlayerSelect(View view) {
+        DialogFragment pSelect = new PlayerSelect();
+        pSelect.show(getFragmentManager(), "PlayerSelectFrag");
     }
 
     @Override
@@ -22,7 +27,6 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
